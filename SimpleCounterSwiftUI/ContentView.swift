@@ -8,9 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var counter: Int = 0
+    
     var body: some View {
-        Text("Hello, world!")
+        VStack{
+            Button(action: {
+                self.counter += 1
+            }, label: {
+                Text("Tap me")
+                    .foregroundColor(.white)
+            })
             .padding()
+            .background(Color.black)
+            .cornerRadius(5.0)
+            
+            if counter>0 {
+                Text("You've tapped me \(counter) times")
+                    .padding()
+                    .font(.largeTitle)
+            } else {
+                Text("You've not tap me")
+                    .padding()
+                    .font(.largeTitle)
+            }
+    
+        }
     }
 }
 
