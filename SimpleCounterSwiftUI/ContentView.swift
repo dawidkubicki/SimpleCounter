@@ -32,6 +32,10 @@ struct ContentView: View {
                     .padding()
                     .font(.largeTitle)
             }
+            
+            ForEach(1...3, id: \.self) { x in
+                Text("Item \(x)")
+            }
     
         }
     }
